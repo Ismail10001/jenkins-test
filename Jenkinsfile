@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Deploy') {
+      steps {
+        sh 'sh \'sshpass -p "iot@12345678" scp -r * iotuser@51.120.241.53:/var/www/html/\''
+      }
+    }
+
   }
 }
